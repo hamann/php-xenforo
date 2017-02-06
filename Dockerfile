@@ -38,6 +38,8 @@ RUN apk add --update freetype-dev libjpeg-turbo-dev libpng-dev libwebp-dev \
     && docker-php-ext-install simplexml \
     && docker-php-ext-install xml \
     && docker-php-ext-install zip \
+    && pecl clear-cache \
+    && pecl update-channels \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
     && apk del autoconf g++ libtool make \
